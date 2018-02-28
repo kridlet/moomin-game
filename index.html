@@ -7,122 +7,57 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>moomin comfort challenge</title>
 </head>
 
 <body>
+
+        <div class="overlay" id="overlay"></div>
+        <div class="modal" id="modal">Hello! The Moomins and their friends are trying to return to Moomin Valley. To get there, you need to help remove all of their angst. Each character has an initial angst level, and the ability to remove angst from other characters through comfort. Choosing a character makes it the comfort provider. You can then choose another character to provide comfort to. Everytime you provide comfort to another character, they will reciprocate with compassion, removing some of your angst. Your goal is to help all the other characters return to Moomin Valley before losing all of your angst, and returning to Moomin Valley before the other characters.<br><br>Click to begin.</div>
     <div id="background">&nbsp;
-        <div class="cols">
-            <div class="col" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front" style="background-image: url('assets/images/little-my-main.png')">
-                        <div class="inner">
-                            <p>Little My</p>
-                            <span>Angst: 180
-                                <br>Comfort: 2
-                                <br>Compassion: 25</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>A mischievous little girl with a brave, spunky personality. She likes adventure, but loves catastrophes,
-                                and often does mean things on purpose. She finds messiness and untidiness exciting.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front" style="background-image: url('assets/images/moominpappa-main.png')">
-                        <div class="inner">
-                            <p>Moomin Pappa</p>
-                            <span>Angst: 120
-                                <br>Comfort: 8
-                                <br>Compassion: 10</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>Boyish and adventurous. He likes to be present when something unusual happens. He is philosophical
-                                at times and likes writing his memoirs.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front" style="background-image: url('assets/images/sniff-main.png')">
-                        <div class="inner">
-                            <p>Sniff</p>
-                            <span>Angst: 100
-                                <br>Comfort: 12
-                                <br>Compassion: 5</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>He likes to take part in everything, but is afraid to do anything dangerous. Sniff appreciates
-                                all valuables and makes many plans to get rich, but does not succeed.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front" style="background-image: url('assets/images/snufkin-main.png')">
-                        <div class="inner">
-                            <p>Snufkin</p>
-                            <span>Angst: 150
-                                <br>Comfort: 4
-                                <br>Compassion: 20</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>A lonesome philosophical traveller, who likes to play the harmonica and wanders around the world
-                                with only a few things, so as not to make his life complicated. He is carefree, calm, and
-                                fearless.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="instruct"></div>
+        <div class="cols" id="available-characters">
+<!-- javascript will add characters here -->
         </div>
         <div class="cols">
             <div class="col">
-                <div class="container">
-                    <div class="frontActive" style="background-image: url('assets/images/snufkin-main.png')">
+                <div class="container" id="giver"><h2 class="heading">Provides Comfort</h2>
+                    <div class="front-active" id="giver-image">
                         <div class="inner">
-                            <p>Snufkin</p>
+                            <p id="giver-name"></p>
                             <span>Angst:
-                                <span id="giverAngst">150</span>
+                                <span id="giver-angst"></span>
                                 <br>Comfort:
-                                <span id="giverComfort">4</span>
+                                <span id="giver-comfort"></span>
                                 <br>Compassion:
-                                <span id="giverCompassion">20</span>
+                                <span id="giver-compassion"></span>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col">
-                    <div class="container">
-                        <div class="frontActive" style="background-image: url('assets/images/little-my-main.png')">
+                    <div class="container" id="receiver"><h2 class="heading">Provides Compasion<h2>
+                        <div class="front-active" id="receiver-image">
                             <div class="inner">
-                                <p>Little My</p>
+                                <p id="receiver-name"></p>
                                 <span>Angst:
-                                        <span id="receiverAngst">180</span>
+                                        <span id="receiver-angst"></span>
                                         <br>Comfort:
-                                        <span id="receiverComfort">2</span>
+                                        <span id="receiver-comfort"></span>
                                         <br>Compassion:
-                                        <span id="receiverCompassion">25</span>
+                                        <span id="receiver-compassion"></span>
                                     </span>
                             </div>
                         </div>
                     </div>
                 </div>
         </div>
+        <button class="button" id="give-comfort">Give Comfort</button>
     </div>
+
+    <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
