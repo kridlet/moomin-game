@@ -12,17 +12,21 @@
 </head>
 
 <body>
-
-        <div class="overlay" id="overlay"></div>
-        <div class="modal" id="modal">Hello! The Moomins and their friends are trying to return to Moomin Valley. To get there, you need to help remove all of their angst. Each character has an initial angst level, and the ability to remove angst from other characters through comfort. Choosing a character makes it the comfort provider. You can then choose another character to provide comfort to. Everytime you provide comfort to another character, they will reciprocate with compassion, removing some of your angst. Your goal is to help all the other characters return to Moomin Valley before losing all of your angst, and returning to Moomin Valley before the other characters.<br><br>Click to begin.</div>
+    <!-- a space for start and stop messages and initiating game play -->
+    <div class="overlay" id="overlay"></div>
+    <!-- the modal - look for button clicks in here to start play -->
+    <div class="modal" id="modal"></div>
+    <!-- the game board - scales to fit -->
     <div id="background">&nbsp;
+        <!-- player choice instructions -->
         <div id="instruct"></div>
-        <div class="cols" id="available-characters">
-<!-- javascript will add characters here -->
-        </div>
+        <!-- javascript will add characters in available-characters -->
+        <div class="cols" id="available-characters"></div>
         <div class="cols">
             <div class="col">
-                <div class="container" id="giver"><h2 class="heading">Provides Comfort</h2>
+                <!-- the giving character -->
+                <div class="container" id="giver">
+                    <h2 class="heading">Provides Comfort</h2>
                     <div class="front-active" id="giver-image">
                         <div class="inner">
                             <p id="giver-name"></p>
@@ -38,21 +42,24 @@
                 </div>
             </div>
             <div class="col">
-                    <div class="container" id="receiver"><h2 class="heading">Provides Compasion<h2>
-                        <div class="front-active" id="receiver-image">
-                            <div class="inner">
-                                <p id="receiver-name"></p>
-                                <span>Angst:
+                <!-- ths receiving characrter -->
+                <div class="container" id="receiver">
+                    <h2 class="heading">Provides Compasion
+                        <h2>
+                            <div class="front-active" id="receiver-image">
+                                <div class="inner">
+                                    <p id="receiver-name"></p>
+                                    <span>Angst:
                                         <span id="receiver-angst"></span>
                                         <br>Comfort:
                                         <span id="receiver-comfort"></span>
                                         <br>Compassion:
                                         <span id="receiver-compassion"></span>
                                     </span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
                 </div>
+            </div>
         </div>
         <button class="button" id="give-comfort">Give Comfort</button>
     </div>
